@@ -7,3 +7,4 @@ deps.plt
 .eunit
 *~
 .DS_Store
+log/*

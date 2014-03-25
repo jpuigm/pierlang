@@ -8,8 +8,7 @@
                   kernel,
                   stdlib
                  ]},
-  %% uncomment if this is an active application
-  %% {mod, { pierlang_app, []}},
+  {mod, { pi_app, []}},
   {env, []}
  ]}.
 %% vim: set filetype=erlang tabstop=2

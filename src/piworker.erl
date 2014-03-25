@@ -8,8 +8,16 @@
 %%%-------------------------------------------------------------------
 -module(piworker).
 
+-compile([{parse_transform, lager_transform}]).
+
+-export([workout/2]).
 -export([pin_the_square/0]).
 -export([pin_the_square/1]).
+
+workout(Manager, Np) ->
+    C = pin_the_square(Np),
+    Manager ! {c, C, self()},
+    ok.
 
 %% Given Np experiments, returns Cp.
 %% For more information, see priv/practica_1_-_presentacion.pdf

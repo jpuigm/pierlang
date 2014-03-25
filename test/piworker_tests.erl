@@ -38,6 +38,23 @@ piworker_test_() ->
                ?assertEqual(ok, meck:expect(random, uniform, 0, 0.7)), 
                ?assertEqual(N,piworker:pin_the_square(N)),
                ?assert(meck:validate(random))
-       end}      
+       end},
+      {"receive result of a workout",
+       fun() ->
+               Self = self(),
+               ?assertEqual(ok, piworker:workout(Self, 5)),
+               ?assert(wait_for_workout())
+       end}
       ]}.
              
+
+
+%% Internal functions
+wait_for_workout() ->
+    receive
+        {c, C, _} when is_integer(C) ->
+            true
+    after
+        1000 ->
+            false
+    end.
