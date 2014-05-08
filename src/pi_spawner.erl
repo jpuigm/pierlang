@@ -1,4 +1,4 @@
--module(pi_spawn).
+-module(pi_spawner).
 
 -behaviour(supervisor).
 
