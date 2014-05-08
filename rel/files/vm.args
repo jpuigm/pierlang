@@ -1,5 +1,5 @@
 ## Name of the node
--name pierlang@127.0.0.1
+-name pierlang-release@127.0.0.1
 
 ## Cookie for distributed erlang
 -setcookie pierlang
