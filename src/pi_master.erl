@@ -58,7 +58,7 @@ create_processes(Total, Np, Pids) ->
     create_processes(Total-1, Np, [NewPid | Pids]).
 
 new_process(Np) ->
-    {ok, Pid} = pi_spawn:spawn_process(self(), Np),
+    {ok, Pid} = pi_spawner:spawn_process(self(), Np),
     Pid.
 
 wait_for_results(N) ->

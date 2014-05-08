@@ -24,6 +24,5 @@ start_link() ->
 %% ===================================================================
 
 init([]) ->
-    {ok, { {one_for_one, 5, 10}, [?CHILD(pi_master, worker),
-                                  ?CHILD(pi_spawner, supervisor)]} }.
+    {ok, { {one_for_one, 5, 10}, [?CHILD(pi_spawner, supervisor)]} }.
 
