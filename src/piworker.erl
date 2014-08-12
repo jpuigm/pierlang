@@ -45,6 +45,7 @@ pin_the_square(Nr, Cp) ->
 -spec pin_the_square() -> boolean().
 pin_the_square() ->
     {X,Y} = {random:uniform(), random:uniform()},
+    lager:debug("x = ~p, y = ~p", [X, Y]),
     X*X + Y*Y =< 1.
 
 
