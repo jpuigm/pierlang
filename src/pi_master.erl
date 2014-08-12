@@ -23,7 +23,7 @@ new_session(N) ->
     lager:info("Starting new session with N = ~p", [N]),
     Np = N div ?PROCESSES,
     lager:debug("P = ~p N = ~p Np = ~p", [?PROCESSES, N, Np]),
-    Pids = create_processes(N, Np),
+    Pids = create_processes(?PROCESSES, Np),
     lager:debug("Pids = ~p", [Pids]),
     C = wait_for_results(length(Pids)),
     lager:debug("C = ~p", [C]),
