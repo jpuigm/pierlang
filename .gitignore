@@ -8,3 +8,5 @@ deps.plt
 *~
 .DS_Store
 log/*
+/.rebar/
+/erl_crash.dump
