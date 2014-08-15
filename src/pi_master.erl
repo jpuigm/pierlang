@@ -28,7 +28,9 @@ new_session(N) ->
     C = wait_for_results(length(Pids)),
     lager:debug("C = ~p", [C]),
     Pi = pi_formula(C, N),
-    lager:info("Estimation of pi number : ~p", [Pi]).
+    lager:info("Estimation of pi number : ~p", [Pi]),
+    Error = abs(math:pi() - Pi),
+    lager:info("Error: ~p", [Error]).
 
 
 %% Internal functions
